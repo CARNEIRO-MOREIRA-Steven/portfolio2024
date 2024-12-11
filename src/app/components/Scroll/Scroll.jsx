@@ -31,11 +31,6 @@ const Scroll = () => {
           end: () => `+=${section2.offsetWidth}`,
           pin: true, 
           scrub: 0.1,
-          snap: {
-            snapTo: 1 / (panelCount - 1),
-            duration: 0.1, // Transition légèrement plus longue
-            ease: "power1.inOut",
-          },
         },
       });
     }
