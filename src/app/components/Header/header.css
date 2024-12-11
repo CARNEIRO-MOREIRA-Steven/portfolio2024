@@ -1,0 +1,20 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+.title_banner{
+    display: flex;
+    align-items: center;
+}
+nav{
+    display: flex;
+    gap: 50px;
+}
