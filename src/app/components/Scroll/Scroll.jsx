@@ -27,7 +27,7 @@ const Scroll = () => {
         ease: "none",
         scrollTrigger: {
           trigger: section2,
-          start: "top top", 
+          start: "top+=50 top", 
           end: () => `+=${section2.offsetWidth}`,
           pin: true, 
           scrub: 0.1,
