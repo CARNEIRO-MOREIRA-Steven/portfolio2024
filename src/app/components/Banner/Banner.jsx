@@ -9,6 +9,57 @@ const Banner = () => {
   const h2Ref = useRef(null);
   const buttonRef = useRef(null);
 
+  const [clicked, setClicked] = useState(false);
+
+  const isMobile = () => window.innerWidth <= 768;
+
+  const handleClick = () => {
+    if (isMobile()) {
+      setClicked(true);
+
+      // Déplacer le bouton de -25px à gauche
+      gsap.to(buttonRef.current, {
+        x: -25, // Décalage horizontal
+        duration: 0.3, // Durée de l'animation
+        ease: "power3.out",
+      });
+
+      // Après 2 secondes, faire revenir le bouton à sa position initiale
+      setTimeout(() => {
+        if (clicked) {
+          gsap.to(buttonRef.current, {
+            x: 0, // Retour à la position initiale
+            duration: 0.3, // Durée de l'animation
+            ease: "power3.out",
+          });
+          setClicked(false);
+        }
+      }, 2000); // Délai avant de revenir à la position
+    }
+  };
+
+  const handleOutsideClick = (e) => {
+    // Si le clic est à l'extérieur du bouton, le réinitialiser
+    if (buttonRef.current && !buttonRef.current.contains(e.target)) {
+      gsap.to(buttonRef.current, {
+        x: 0, // Retour à la position initiale
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    }
+  };
+
+  // Ajouter un écouteur d'événements pour les clics à l'extérieur
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick);
+
+    // Nettoyer l'écouteur d'événements lors du démontage du composant
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
+
   const animateText = () => {
 
     const h1Text = h1Ref.current.querySelectorAll('span');
@@ -74,6 +125,7 @@ const Banner = () => {
             href="/#profil" 
             onMouseEnter={() => setButtonHover(true)} 
             onMouseLeave={() => setButtonHover(false)}
+            onClick={handleClick}
           >
             {buttonHover ? "Qui suis-je ?" : "Me découvrir"}
           </a>
