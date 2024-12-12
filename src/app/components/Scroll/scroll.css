@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.section1, .section3{
+  height: 0vh;
+}
+
 .section2 {
   position: relative;
   background: #000000;

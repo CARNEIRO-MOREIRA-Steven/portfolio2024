@@ -1,7 +1,6 @@
 .experience_conatiner{
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
