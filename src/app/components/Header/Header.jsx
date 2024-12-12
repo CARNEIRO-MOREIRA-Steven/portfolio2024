@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link'
-import './header.css'
+import Link from 'next/link';
+import './header.css';
 
 const Header = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activePath, setActivePath] = useState('');
 
@@ -13,68 +12,61 @@ const Header = () => {
   };
 
   const closeMenu = () => {
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });}
+  const handleScrollToSection = (id) => {
+    const targetSection = document.getElementById(id);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setActivePath(`#${id}`);
+    closeMenu();
+  };
 
   useEffect(() => {
     const handleRouteChange = () => {
-      setActivePath(window.location.pathname);
+      setActivePath(window.location.hash);
     };
 
     handleRouteChange();
 
-    window.addEventListener('popstate', handleRouteChange);
-    window.addEventListener('pushState', handleRouteChange);
-    window.addEventListener('replaceState', handleRouteChange);
+    window.addEventListener('hashchange', handleRouteChange);
 
     return () => {
-      window.removeEventListener('popstate', handleRouteChange);
-      window.removeEventListener('pushState', handleRouteChange);
-      window.removeEventListener('replaceState', handleRouteChange);
+      window.removeEventListener('hashchange', handleRouteChange);
     };
   }, []);
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add('menu-open');
-    } else {
-      document.body.classList.remove('menu-open');
-    }
-  }, [isMenuOpen]);
   return (
     <header>
-        <section className='desktop-nav'>
+      <section className='desktop-nav'>
         <h2 className='title_banner'><a href='/'>SCM</a></h2>
         <nav>
-            <Link href='/#profil'>Mon profil</Link>
-            <Link href='/#experiences'>Expériences</Link>
-            <Link href='/#projets'>Projets</Link>
-            <Link href='/#contact'>Contactez-moi</Link>
+          <a onClick={() => handleScrollToSection('profil')}>Mon profil</a>
+          <a onClick={() => handleScrollToSection('competences')}>Compétences</a>
+          <a onClick={() => handleScrollToSection('projets')}>Projets</a>
+          <a onClick={() => handleScrollToSection('contact')}>Contactez-moi</a>
         </nav>
-        </section>
-        <div className="mobile-menu">
+      </section>
+      <div className="mobile-menu">
         <h2 className='title_banner'><a href='/'>SCM</a></h2>
         <div id="menuToggle">
-        <label htmlFor="menu"></label>
+          <label htmlFor="menu"></label>
           <input id='menu' name="menu" type="checkbox" checked={isMenuOpen} onChange={toggleMenu} />
           <span></span>
           <span></span>
           <span></span>
           <ul id="menu" className={isMenuOpen ? 'open' : ''}>
-            <li><Link href='/' className={activePath === '/#profil' ? 'active' : ''}onClick={closeMenu}>Mon profil</Link></li>
-            <li><Link href='/#tatoueuse' className={activePath === '/#experiences' ? 'active' : ''}onClick={closeMenu}>Expériences</Link></li>
-            <li><Link href='/soins' className={activePath === '/#projets' ? 'active' : ''}onClick={closeMenu}>Projets</Link></li>
-            <li><Link href='/#contact' className={activePath === '/#contact' ? 'active' : ''}onClick={closeMenu}>Contactez-moi</Link></li>
+            <li><a onClick={() => handleScrollToSection('profil')} className={activePath === '#profil' ? 'active' : ''}>Mon profil</a></li>
+            <li><a onClick={() => handleScrollToSection('competences')} className={activePath === '#competences' ? 'active' : ''}>Compétences</a></li>
+            <li><a onClick={() => handleScrollToSection('projets')} className={activePath === '#projets' ? 'active' : ''}>Projets</a></li>
+            <li><a onClick={() => handleScrollToSection('contact')} className={activePath === '#contact' ? 'active' : ''}>Contactez-moi</a></li>
           </ul>
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

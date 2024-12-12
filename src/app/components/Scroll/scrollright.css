@@ -1,0 +1,39 @@
+/* Structure de base */
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1, .section3{
+  height: 0vh;
+}
+
+.section2 {
+  position: relative;
+  background: #000000;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.section3 {
+  background: #90ee90;
+}
+
+.panels {
+  display: flex;
+  height: 100%;
+  width: 110vw; 
+  transform: translateX(0); 
+  transition: transform 0.1s ease-out; 
+}
+
+.panel {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

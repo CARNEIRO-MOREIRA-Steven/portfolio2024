@@ -3,7 +3,8 @@ import './globals.css'
 
 
 import Header from './components/Header/Header'
-import Scroll from './components/Scroll/Scroll'
+import ScrollRight from './components/Scroll/ScrollRight'
+import ScrollBottom from './components/Scroll/ScrollBottom'
 import Banner from './components/Banner/Banner'
 import Contact from './components/Contact/Contact'
 
@@ -14,7 +15,8 @@ const page = () => {
       <Header />
       <section className='page_container'>
         <Banner />
-        <Scroll />
+        <ScrollRight />
+        <ScrollBottom />
         <Contact />
       </section>
     </>

@@ -31,3 +31,7 @@ p,a{
 .page_container{
   overflow: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}
