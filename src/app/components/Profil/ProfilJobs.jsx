@@ -74,7 +74,7 @@ const ProfilJobs = () => {
 
   return (
     <section className="profil_jobs_details">
-    <img className="construction_svg" src="reshot-icon-gear.svg" ref={svgRef} alt="Rotating Icon" />
+    <img className="construction_svg_top" src="reshot-icon-gear.svg" ref={svgRef} alt="Rotating Icon" />
     <section ref={el => jobDetailsTextRef.current.push(el)} className="details_profil_jobs">
     <p>
       Ancien salarié dans le BTP, j'ai choisi de me tourner vers un domaine pour lequel j'ai une véritable passion. Toujours animé par un
@@ -85,6 +85,7 @@ const ProfilJobs = () => {
       de développeur intégrateur web.
     </p>
     </section>
+    <img className="construction_svg_bottom" src="reshot-icon-gear.svg" ref={svgRef} alt="Rotating Icon" />
   </section>
   )
 }

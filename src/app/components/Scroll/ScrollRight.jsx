@@ -17,28 +17,25 @@ const ScrollRight = () => {
   useEffect(() => {
     const section2 = section2Ref.current;
     const panels = section2.querySelector(".panels");
-
+  
     if (section2 && panels) {
       const panelCount = panels.children.length;
-
+  
       gsap.to(panels, {
-        xPercent: -100 * (panelCount - 1),
+        xPercent: -100 * (panelCount - 1), 
         ease: "none",
         scrollTrigger: {
           trigger: section2,
-          start: "top top", 
+          start: "top top",
           end: () => `+=${section2.offsetWidth}`,
-          pin: true, 
+          pin: true,
           markers: true,
-          scrub: 0.05,
-          snap: {
-            snapTo: 1 / (panelCount - 1),  // Assure que le défilement s'arrête sur chaque section
-            ease: "power1.inOut",  // Effet de transition plus fluide
-          },
+          scrub: 1.5, 
         },
       });
     }
   }, []);
+  
   return (
             <section className="section section2" id="section2" ref={section2Ref}>
               <img className='section2_background' src='3213337.jpg'></img>

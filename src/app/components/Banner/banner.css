@@ -8,7 +8,7 @@
 }
 
 .image_background{
-    width: 100%;
+    width: 95vw;
     height: 100vh;
     object-fit: cover;
     position: absolute;
@@ -74,5 +74,10 @@
   @media screen and (max-width: 767px) {
     .banner_container{
       text-align: center;
+      height: 90vh;
+    }
+    .image_background{
+      width: 100vw;
+      height: 90vh;
     }
   }

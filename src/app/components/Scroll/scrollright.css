@@ -32,13 +32,13 @@
 .panels {
   display: flex;
   height: 100%;
-  width: 110vw; 
+  width: 95vw; 
   transform: translateX(0); 
   transition: transform 0.1s ease-out; 
 }
 
 .panel {
-  flex: 0 0 100%;
+  flex: 0 0 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,11 +52,24 @@
 }
 
 @media screen and (max-width: 767px) {
+  .section{
+    height: 90vh;
+  }
   .panel.hobbies{
     flex-direction: column;
-    height: 100vh;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: space-evenly;
   }
-}
+  .section2_background{
+    height: 90vh;
+  }
+  .panels{
+    width: 100vw;
+  }
+  .panel {
+    flex: 0 0 99%;
+  }
+} 
+
+
