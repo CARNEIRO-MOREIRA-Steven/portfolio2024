@@ -17,6 +17,14 @@
   height: 100vh;
 }
 
+.section2_background{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(15%);
+}
+
 .section3 {
   background: #90ee90;
 }
@@ -36,4 +44,19 @@
   align-items: center;
   font-size: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel.hobbies{
+  width: 100vw;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+  .panel.hobbies{
+    flex-direction: column;
+    height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
 }

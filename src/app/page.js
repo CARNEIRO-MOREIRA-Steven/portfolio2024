@@ -16,7 +16,6 @@ const page = () => {
       <section className='page_container'>
         <Banner />
         <ScrollRight />
-        <ScrollBottom />
         <Contact />
       </section>
     </>

@@ -2,8 +2,8 @@
 
 import './scrollright.css';
 import Profil from '../Profil/Profil';
-import Projets from '../Projets/Projets';
-import Competences from '../Competences/Competences';
+import ProfilHobbie from '../Profil/ProfilHobbie';
+import ProfilJobs from '../Profil/ProfilJobs';
 
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -26,21 +26,26 @@ const ScrollRight = () => {
         ease: "none",
         scrollTrigger: {
           trigger: section2,
-          start: "top+=5 top", 
+          start: "top top", 
           end: () => `+=${section2.offsetWidth}`,
           pin: true, 
           markers: true,
-          scrub: 0.1,
+          scrub: 0.05,
+          snap: {
+            snapTo: 1 / (panelCount - 1),  // Assure que le défilement s'arrête sur chaque section
+            ease: "power1.inOut",  // Effet de transition plus fluide
+          },
         },
       });
     }
   }, []);
   return (
-            <section className="section section2" ref={section2Ref}>
+            <section className="section section2" id="section2" ref={section2Ref}>
+              <img className='section2_background' src='3213337.jpg'></img>
               <section className="panels">
-                <section className="panel"> <Profil /></section>
-                <section className="panel"><Profil /></section>
-                <section className="panel"><Profil /></section>
+                <section className="panel"><Profil/></section>
+                <section className="panel"><ProfilJobs/></section>
+                <section className="panel hobbies"><ProfilHobbie /></section>
               </section>
             </section>
   );

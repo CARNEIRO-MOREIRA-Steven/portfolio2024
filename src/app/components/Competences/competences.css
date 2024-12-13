@@ -1,4 +1,4 @@
-.experience_conatiner{
+.experience_container{
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -6,4 +6,23 @@
     align-items: center;
     justify-content: space-around;
     text-align: center;
+}
+
+.experience_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.experience_photo{
+    width: 20%;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    object-fit: cover;
+    height: 55%;
+    z-index: -1;
 }

@@ -43,7 +43,7 @@ const Header = () => {
       <section className='desktop-nav'>
         <h2 className='title_banner'><a href='/'>SCM</a></h2>
         <nav>
-          <a onClick={() => handleScrollToSection('profil')}>Mon profil</a>
+          <a onClick={() => handleScrollToSection('profil')}>Qui suis-je ?</a>
           <a onClick={() => handleScrollToSection('competences')}>Compétences</a>
           <a onClick={() => handleScrollToSection('projets')}>Projets</a>
           <a onClick={() => handleScrollToSection('contact')}>Contactez-moi</a>
@@ -58,7 +58,7 @@ const Header = () => {
           <span></span>
           <span></span>
           <ul id="menu" className={isMenuOpen ? 'open' : ''}>
-            <li><a onClick={() => handleScrollToSection('profil')} className={activePath === '#profil' ? 'active' : ''}>Mon profil</a></li>
+            <li><a onClick={() => handleScrollToSection('profil')} className={activePath === '#profil' ? 'active' : ''}>Qui suis-je ?</a></li>
             <li><a onClick={() => handleScrollToSection('competences')} className={activePath === '#competences' ? 'active' : ''}>Compétences</a></li>
             <li><a onClick={() => handleScrollToSection('projets')} className={activePath === '#projets' ? 'active' : ''}>Projets</a></li>
             <li><a onClick={() => handleScrollToSection('contact')} className={activePath === '#contact' ? 'active' : ''}>Contactez-moi</a></li>

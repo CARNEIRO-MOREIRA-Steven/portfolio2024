@@ -28,10 +28,32 @@ p,a{
   font-size: 20px;
 }
 
+ul{
+  list-style: none;
+  padding: 0;
+}
+
 .page_container{
   overflow: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 767px) {
+  h1{
+    font-size: 35px;
+    padding: 5px;
+  }
+  h2{
+    font-size: 30px;
+  }
+  h3{
+    font-size: 25px;
+  }
+  p,a, ul{
+    font-size: 17px;
+    padding: 5px;
+  }
 }
