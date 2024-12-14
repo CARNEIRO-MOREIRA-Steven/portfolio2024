@@ -5,7 +5,6 @@ body{
   color: #ffffff;
   width: 100%;
   margin: 0;
-  overflow-x: hidden;
 }
 a{
   text-decoration: none;
@@ -34,7 +33,6 @@ ul{
 }
 
 .page_container{
-  overflow: hidden;
   width: 95vw;
 }
 
@@ -44,18 +42,18 @@ html {
 
 @media screen and (max-width: 767px) {
   h1{
-    font-size: 35px;
+    font-size: 30px;
     padding: 5px;
   }
   h2{
-    font-size: 30px;
+    font-size: 25px;
   }
   h3{
-    font-size: 25px;
+    font-size: 20px;
   }
   p,a, ul{
     font-size: 17px;
-    padding: 5px;
+    padding:2px 5px;
   }
   .page_container{
     width: 100vw;

@@ -17,43 +17,39 @@ const Banner = () => {
     if (isMobile()) {
       setClicked(true);
 
-      // Déplacer le bouton de -25px à gauche
+      
       gsap.to(buttonRef.current, {
-        x: -25, // Décalage horizontal
-        duration: 0.3, // Durée de l'animation
+        x: -25, 
+        duration: 0.3, 
         ease: "power3.out",
       });
 
-      // Après 2 secondes, faire revenir le bouton à sa position initiale
       setTimeout(() => {
         if (clicked) {
           gsap.to(buttonRef.current, {
-            x: 0, // Retour à la position initiale
-            duration: 0.3, // Durée de l'animation
+            x: 0, 
+            duration: 0.3, 
             ease: "power3.out",
           });
           setClicked(false);
         }
-      }, 2000); // Délai avant de revenir à la position
+      }, 2000); 
     }
   };
 
   const handleOutsideClick = (e) => {
-    // Si le clic est à l'extérieur du bouton, le réinitialiser
     if (buttonRef.current && !buttonRef.current.contains(e.target)) {
       gsap.to(buttonRef.current, {
-        x: 0, // Retour à la position initiale
+        x: 0, 
         duration: 0.3,
         ease: "power3.out",
       });
     }
   };
 
-  // Ajouter un écouteur d'événements pour les clics à l'extérieur
   useEffect(() => {
     document.addEventListener('click', handleOutsideClick);
 
-    // Nettoyer l'écouteur d'événements lors du démontage du composant
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
@@ -122,7 +118,7 @@ const Banner = () => {
         <div className="link_button">
           <a 
             className="button_profil" 
-            href="/#profil" 
+            href="#profil" 
             onMouseEnter={() => setButtonHover(true)} 
             onMouseLeave={() => setButtonHover(false)}
             onClick={handleClick}

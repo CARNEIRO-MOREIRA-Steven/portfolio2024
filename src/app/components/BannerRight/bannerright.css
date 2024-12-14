@@ -38,9 +38,9 @@
 
 @media screen and (max-width: 767px) {
     .banner_right_container{
-        height: 10vh;
+        height: 7vh;
         width: 100%;
-        top: 90%;
+        top: 93%;
         background-color: #ffffff;
 
     }
@@ -49,7 +49,9 @@
         text-orientation: sideways;
         font-size: 20px;
     }
-
+    .banner_right_svg{
+        width: 30px;
+    }
     .banner_right_svg.code{
         display: none;
     }

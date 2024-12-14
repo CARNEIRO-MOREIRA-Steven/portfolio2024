@@ -75,9 +75,24 @@
     .banner_container{
       text-align: center;
       height: 90vh;
+      padding-top: 50px;
     }
     .image_background{
       width: 100vw;
-      height: 90vh;
+      height: 93vh;
+    }
+    .button_profil{
+      width: 250px;
+    }
+    .button_profil:hover{
+      width: 200px;
+    }
+    .button_profil:hover + .icon {
+      top: 5px;
+      left: 185px;
+    }
+    .button_profil:hover{
+      position: relative;
+      left: -10%;
     }
   }
