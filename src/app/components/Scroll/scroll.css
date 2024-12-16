@@ -1,73 +1,62 @@
-body, html {
+/* Réinitialisation des styles */
+*, ::before, ::after {
   margin: 0;
   padding: 0;
-  overflow: hidden; 
-  height: 100%; 
+  box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #101010;
+  color: white;
+}
 
 .app-container {
-  position: relative;
-}
-
-.header {
-  position: fixed;
-  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 100%;
-  z-index: 10;
-  background-color: rgb(0, 0, 0);
-  padding: 10px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
 }
 
 .section {
-    overflow: hidden;
-  
-  
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #000000;
-  color: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: transform 1s ease-out;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start; /* Verrouille le scroll sur chaque section */
 }
 
-.wrapper-outer {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.section::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
 }
 
 .wrapper-inner {
-  position: relative;
-  overflow: hidden;
+  z-index: 2;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
+.section#banner {
+  background-image: url("/images/banner.jpg"); /* Adapte avec ton chemin */
 }
-
-.section-title {
-  font-size: 3rem;
-  text-align: center;
-  font-weight: bold;
-  z-index: 1;
+.section#profil {
+  background-image: url("/images/profil.jpg");
+}
+.section#skills {
+  background-image: url("/images/skills.jpg");
+  background-color: #101010;
 }

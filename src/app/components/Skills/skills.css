@@ -1,5 +1,6 @@
 .skills_container {
-    height: 93vh;
+    width: 100vw;
+    height: 100vh;
     padding: 15vh 0 0 0;
     display: flex;
     align-items: center;
@@ -10,7 +11,7 @@
 .floating-logos-container {
     position: relative; 
     height: 35vh; 
-    width: 100vw; 
+    width: 95vw; 
     overflow: hidden; 
 }
 
@@ -35,5 +36,16 @@
 
 
 @media screen and (max-width: 767px) {
+        .skills_container {
+        width: 100vw;
+        height: 93vh;
+    }
+    .floating-logos-container{
+        width: 100vw;
+    }
+
+    .floating-logo{
+        width: 50px;
+    }
  
 }
