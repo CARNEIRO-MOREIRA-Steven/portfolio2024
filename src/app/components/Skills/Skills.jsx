@@ -54,6 +54,12 @@ const Skills = () => {
       </section>
       <section className='soft_skills'>
       <h2>Soft skills</h2>
+      <ul>
+      <li>Communication</li>
+      <li>Créativité</li>
+      <li>Gestion du temps</li>
+      <li>L'adaptabilité</li>
+      </ul>
       </section>
     </section>
   );
