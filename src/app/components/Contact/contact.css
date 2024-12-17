@@ -7,6 +7,7 @@
 @media screen and (max-width: 767px) {
     .contact_container{
         width: 100vw;
-        height: 95vh;
+        height: 93vh;
+        padding-top: 15vh;
     }
 }

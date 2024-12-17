@@ -1,5 +1,6 @@
 .banner_container{
     height: 100vh;
+    width: 95vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,12 +9,11 @@
 }
 
 .image_background{
-    width: 95vw;
+    width: 100vw;
     height: 100vh;
     object-fit: cover;
     position: absolute;
     z-index: -1;
-    top: 0;
     filter: brightness(35%);
 }
 
@@ -35,6 +35,17 @@
     letter-spacing: 1px;
     border: 3px solid #333;
     transition: all .35s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner_content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
   }
   
   .icon{
@@ -74,12 +85,19 @@
   @media screen and (max-width: 767px) {
     .banner_container{
       text-align: center;
-      height: 90vh;
-      padding-top: 50px;
+      height: 93vh;
+      width: 100vw;
+    }
+    .banner_content{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
     }
     .image_background{
       width: 100vw;
-      height: 93vh;
+      height: 100vh;
     }
     .button_profil{
       width: 250px;

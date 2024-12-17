@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger"; // Importer ScrollTrigger
 
 import './profil.css';
 
@@ -9,18 +10,20 @@ const Profil = () => {
   const TitleTextRef = useRef([]);
   const SubtitleTextRef = useRef([]);
   const descriptionTextRef = useRef([]);
-  const imageProfilRef = useRef([]);
+  const imageProfilRef = useRef(null); // Référence unique pour l'image
   const jobDetailsTextRef = useRef([]);
   const hobbiesRef = useRef([]);
 
   useEffect(() => {
-    const animateSection = (el, delay = 1, animationProps = {}) => {
+    gsap.registerPlugin(ScrollTrigger); // Enregistrer ScrollTrigger
+
+    // Fonction pour animer les sections
+    const animateSection = (el, delay = 0, animationProps = {}) => {
       gsap.fromTo(
-        el, 
+        el,
         {
           opacity: 0,
           y: 50,
-        
         },
         {
           opacity: 1,
@@ -33,46 +36,48 @@ const Profil = () => {
       );
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target;
-          const delay = target === imageProfilRef.current ? 1.2 : 0.9; 
-          const animationProps = target === imageProfilRef.current 
-            ? { opacity: 1, scale: 0.8, delay:2.2 }
-            : target === jobDetailsTextRef.current[0]
-              ? { opacity: 1, delay : 2 }
-            : target === jobDetailsTextRef.current[0]
-              ? { opacity: 1, delay : 2 } 
-              : target === hobbiesRef.current[0]
-                ? { opacity: 1, delay : 3 } 
-                : {}; 
-
-          animateSection(target, delay, animationProps);
-          observer.unobserve(target); 
+    // Fonction pour configurer ScrollTrigger pour redémarrer l'animation à chaque fois
+    const applyScrollTrigger = (el, delay = 0) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: delay,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "top 60%",
+            toggleActions: "restart none none none", // Redémarre l'animation chaque fois que la section entre dans la vue
+            markers: false, // Optionnel pour déboguer
+          }
         }
-      });
-    }, {
-      threshold: 0.7,  
-    });
+      );
+    };
 
+    // Applique ScrollTrigger à chaque élément
     if (imageProfilRef.current) {
-      observer.observe(imageProfilRef.current); 
+      applyScrollTrigger(imageProfilRef.current, 1.2); // Animation de l'image avec délai spécifique
     }
-    TitleTextRef.current.forEach((el, index) => observer.observe(el)); 
-    SubtitleTextRef.current.forEach((el, index) => observer.observe(el)); 
-    descriptionTextRef.current.forEach((el, index) => observer.observe(el)); 
-    jobDetailsTextRef.current.forEach((el, index) => observer.observe(el)); 
-    hobbiesRef.current.forEach((el, index) => observer.observe(el)); 
+
+    TitleTextRef.current.forEach((el, index) => applyScrollTrigger(el, 2 + index * 0.5));
+    SubtitleTextRef.current.forEach((el, index) => applyScrollTrigger(el, 2.5 + index * 0.5));
+    descriptionTextRef.current.forEach((el, index) => applyScrollTrigger(el, 3 + index * 0.5));
+    jobDetailsTextRef.current.forEach((el, index) => applyScrollTrigger(el, 3.5 + index * 0.5));
+    hobbiesRef.current.forEach((el, index) => applyScrollTrigger(el, 4 + index * 0.5));
+
   }, []);
 
   return (
     <section id="profil" className="profil_container" ref={profilRef}>
-      <img className='section2_background' src='3213337.jpg' alt="Background"></img>
+      <img  className='section2_background' src='3213337.jpg' alt="Background" />
       <section className="profil_description">
         <h2 ref={el => TitleTextRef.current.push(el)}>Qui suis-je ?</h2>
         <h3 ref={el => SubtitleTextRef.current.push(el)}>Steven - Développeur web frontend</h3>
-        <p ref={el => descriptionTextRef.current.push(el)} >
+        <p ref={el => descriptionTextRef.current.push(el)}>
           J'ai 25 ans et j'ai décidé de changer radicalement de métier pour m'orienter vers un univers qui m'intéresse réellement et dans lequel
           je m'épanouis pleinement.
         </p>
@@ -92,7 +97,7 @@ const Profil = () => {
         </section>
       </section>
       <section className="profil_image">
-        <img className="profil_photo" src="photoprofil.png" alt="Photo de dev" ref={imageProfilRef} />
+        <img id="profil_image" src="photoprofil.png" alt="Photo de dev" ref={imageProfilRef} />
       </section>
     </section>
   );

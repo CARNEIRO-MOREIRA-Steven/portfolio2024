@@ -6,7 +6,7 @@ header{
     gap: 100px;
     height: 10vh;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.658);
 }

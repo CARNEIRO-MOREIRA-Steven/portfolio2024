@@ -1,8 +1,9 @@
 .skills_container {
-    height: 93vh;
+    width: 95vw;
+    height: 100vh;
     padding: 15vh 0 0 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
 }
@@ -10,13 +11,14 @@
 .floating-logos-container {
     position: relative; 
     height: 35vh; 
-    width: 100vw; 
+    width: 95vw; 
     overflow: hidden; 
 }
 
-.floating-logo {
+#floating-logo {
     position: absolute; 
     width: 100px;
+    height: 100px;
     will-change: transform; 
     border-radius: 50%;
 }
@@ -30,12 +32,28 @@
 }
 .soft_skills{
     height: 38vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
 }
 
-
-
 @media screen and (max-width: 767px) {
- .floating-logo{
+ #floating-logo{
     width: 50px;
+    height: 50px;
+ }
+ .floating-logos-container{
+    width: 100vw;
+ }
+ .hard_skills{
+    width: 100vw;
+ }
+ .soft_skills{
+    width: 100vw;
+ }
+ .skills_container{
+    height: 93vh;
  }
 }

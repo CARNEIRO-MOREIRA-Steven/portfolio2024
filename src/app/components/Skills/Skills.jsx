@@ -43,13 +43,13 @@ const Skills = () => {
       <section className='hard_skills'>
       <h2>Hard skills</h2>
       <div className="floating-logos-container" ref={containerRef}>
-        <img src="react.png" alt="React Logo" className="floating-logo" ref={(el) => logoRefs.current.push(el)} />
-        <img src="next.webp" alt="Next.js Logo" className="floating-logo" ref={(el) => logoRefs.current.push(el)} />
-        <img src="html.webp" alt="HTML Logo" className="floating-logo" ref={(el) => logoRefs.current.push(el)} />
-        <img src="css.png" alt="CSS Logo" className="floating-logo" ref={(el) => logoRefs.current.push(el)} />
-        <img src="JavaScript-logo.png" alt="JavaScript Logo" className="floating-logo" ref={(el) => logoRefs.current.push(el)} />
-        <img src="gsap.jpeg" alt="Gsap Logo" className="floating-logo" ref={(el) => logoRefs.current.push(el)} />
-        <img src="framer.png" alt="Framer Logo" className="floating-logo" ref={(el) => logoRefs.current.push(el)} />
+        <img src="react.png" alt="React Logo" id="floating-logo" ref={(el) => logoRefs.current.push(el)} />
+        <img src="next.webp" alt="Next.js Logo" id="floating-logo" ref={(el) => logoRefs.current.push(el)} />
+        <img src="html.webp" alt="HTML Logo" id="floating-logo" ref={(el) => logoRefs.current.push(el)} />
+        <img src="css.png" alt="CSS Logo" id="floating-logo" ref={(el) => logoRefs.current.push(el)} />
+        <img src="JavaScript-logo.png" alt="JavaScript Logo" id="floating-logo" ref={(el) => logoRefs.current.push(el)} />
+        <img src="gsap.jpeg" alt="Gsap Logo" id="floating-logo" ref={(el) => logoRefs.current.push(el)} />
+        <img src="framer.png" alt="Framer Logo" id="floating-logo" ref={(el) => logoRefs.current.push(el)} />
       </div>
       </section>
       <section className='soft_skills'>

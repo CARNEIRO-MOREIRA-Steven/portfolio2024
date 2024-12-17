@@ -103,7 +103,7 @@ const Banner = () => {
   return (
     <section className="banner_container">
       <img className="image_background" src="./photodev.jpg" alt="background" />
-      
+      <section className='banner_content'>
       <h1 ref={h1Ref}>
         {"CARNEIRO MOREIRA Steven".split("").map((letter, index) => (
           <span key={index}>{letter}</span>
@@ -131,6 +131,7 @@ const Banner = () => {
             </svg>
           </div>
         </div>
+        </section>
       </section>
     </section>
   );
