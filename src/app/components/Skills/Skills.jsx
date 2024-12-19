@@ -137,10 +137,26 @@ const Skills = () => {
       <section className="soft_skills">
         <motion.h2 animate={softSkillsTitle} initial={{y : -100}}>Soft skills</motion.h2>
         <ul className='list_soft_skills'>
-          <motion.li className='details_list_soft_skills' initial={{ opacity: 0 }} animate={listSoftSkills1}>Communication</motion.li>
-          <motion.li className='details_list_soft_skills' initial={{ opacity: 0 }} animate={ listSoftSkills2 }>Créativité</motion.li>
-          <motion.li className='details_list_soft_skills' initial={{ opacity: 0 }} animate={ listSoftSkills3 }>Gestion du temps</motion.li>
-          <motion.li className='details_list_soft_skills' initial={{ opacity: 0 }} animate={listSoftSkills4 }>L'adaptabilité</motion.li>
+          <motion.li className='details_list_soft_skills conversation' initial={{ opacity: 0 }} animate={listSoftSkills1}>
+            Communication
+            <aside>
+            <img src='./conversation.png'></img></aside>
+          </motion.li>
+          <motion.li className='details_list_soft_skills idea' initial={{ opacity: 0 }} animate={ listSoftSkills2 }>
+            Créativité
+            <aside>
+            <img src='./idea.png'></img></aside>
+          </motion.li>
+          <motion.li className='details_list_soft_skills schedule' initial={{ opacity: 0 }} animate={ listSoftSkills3 }>
+            Gestion du temps
+            <aside>
+            <img src='./schedule.png'></img></aside>
+            </motion.li>
+          <motion.li className='details_list_soft_skills chameleon' initial={{ opacity: 0 }} animate={listSoftSkills4 }>
+            L'adaptabilité
+            <aside>
+            <img src='./chameleon.png'></img></aside>
+            </motion.li>
         </ul>
       </section>
     </motion.section>
