@@ -1,137 +1,100 @@
-"use client"
-import React, { useRef, useState, useEffect } from 'react';
-import { gsap } from 'gsap';
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import './banner.css';
 
 const Banner = () => {
-  const [buttonHover, setButtonHover] = useState(false);
-  const h1Ref = useRef(null);
-  const h2Ref = useRef(null);
-  const buttonRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const [clicked, setClicked] = useState(false);
+  const titleControls = useAnimation();
+  const subtitleControls = useAnimation();
+  const buttonControls = useAnimation();
 
-  const isMobile = () => window.innerWidth <= 768;
+  const sectionRef = useRef(null);
 
-  const handleClick = () => {
-    if (isMobile()) {
-      setClicked(true);
-
-      
-      gsap.to(buttonRef.current, {
-        x: -25, 
-        duration: 0.3, 
-        ease: "power3.out",
-      });
-
-      setTimeout(() => {
-        if (clicked) {
-          gsap.to(buttonRef.current, {
-            x: 0, 
-            duration: 0.3, 
-            ease: "power3.out",
-          });
-          setClicked(false);
-        }
-      }, 2000); 
-    }
-  };
-
-  const handleOutsideClick = (e) => {
-    if (buttonRef.current && !buttonRef.current.contains(e.target)) {
-      gsap.to(buttonRef.current, {
-        x: 0, 
-        duration: 0.3,
-        ease: "power3.out",
-      });
+  const checkVisibility = () => {
+    const section = sectionRef.current;
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      const isInView = rect.top >= 0 && rect.top <= window.innerHeight * 0.8; 
+      if (isInView) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     }
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleOutsideClick);
+    if (isVisible) {
+      titleControls.start({ opacity: 1, y: 0, transition: { duration: 0.5, delay : 0.5 } });
+      subtitleControls.start({ opacity: 1, transition: { duration: 1, delay : 1 } });
+      buttonControls.start({ opacity: 1, y: 0, transition: { duration: 1 , delay : 1.5 } });
+    } else {
+      titleControls.start({ opacity: 0, y: 20 });
+      subtitleControls.start({ opacity: 0 });
+      buttonControls.start({ opacity: 0, y: -75 });
+    }
+  }, [isVisible, titleControls, subtitleControls, buttonControls]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
 
     return () => {
-      document.removeEventListener('click', handleOutsideClick);
+      window.removeEventListener('scroll', checkVisibility);
     };
-  }, []);
-
-
-  const animateText = () => {
-
-    const h1Text = h1Ref.current.querySelectorAll('span');
-    const h2Text = h2Ref.current;
-    const buttonContent = buttonRef.current
-
-    const tl = gsap.timeline();
-
-    tl.fromTo(
-        h1Text, 
-        { opacity: 0, y: 20 }, 
-        {
-          opacity: 1, 
-          y: 0,
-          stagger: 0.15, 
-          duration: 1,
-          ease: 'power3.out',
-        }
-      )
-      .fromTo(
-        h2Text, 
-        { opacity: 0 }, 
-        {
-          opacity: 1, 
-          duration: 1, 
-          ease: 'power3.out',
-        },
-        "-=0.5" 
-      )
-      .fromTo(
-        buttonContent,
-        {opacity:0, y:-75},
-        {
-        opacity : 1,
-        y : 0
-        }, 
-        "-=0.7"
-      );
-    };
-
-  useEffect(() => {
-    animateText();  
   }, []);
 
   return (
-    <section className="banner_container">
+    <section ref={sectionRef} className="banner_container">
       <img className="image_background" src="./photodev.jpg" alt="background" />
-      <section className='banner_content'>
-      <h1 ref={h1Ref}>
-        {"CARNEIRO MOREIRA Steven".split("").map((letter, index) => (
-          <span key={index}>{letter}</span>
-        ))}
-      </h1>
+      <section className="banner_content">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={titleControls}
+          className="banner_title"
+        >
+          {"CARNEIRO MOREIRA Steven".split("").map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.15 }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h1>
 
-      <h2 ref={h2Ref}>
-        {"Développeur Web - Intégrateur"}
-      </h2>
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={subtitleControls}
+          className="banner_subtitle"
+        >
+          {"Développeur Web - Intégrateur"}
+        </motion.h2>
 
-      <section ref={buttonRef} className="button">
-        <div className="link_button">
-          <a 
-            className="button_profil" 
-            href="#profil" 
-            onMouseEnter={() => setButtonHover(true)} 
-            onMouseLeave={() => setButtonHover(false)}
-            onClick={handleClick}
-          >
-            {buttonHover ? "Qui suis-je ?" : "Me découvrir"}
-          </a>
-          <div className="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
-              <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
-            </svg>
+        <motion.section
+          initial={{ opacity: 0, y: -75 }}
+          animate={buttonControls}
+          className="banner_button"
+        >
+          <div className="link_button">
+            <a
+              className="button_profil"
+              href="#profil"
+            >
+              Me découvrir
+            </a>
+            <div className="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+              </svg>
+            </div>
           </div>
-        </div>
-        </section>
+        </motion.section>
       </section>
     </section>
   );
