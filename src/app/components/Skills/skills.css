@@ -135,6 +135,45 @@
     }
 }
 
+@media screen and (min-width: 768px) and (max-width : 1023px) {
+    .details_list_soft_skills{
+        width: 150px;
+        height: 60%;
+    }
+    .list_soft_skills{
+        flex-wrap: wrap;
+    }
+
+    .details_list_soft_skills.conversation img , .details_list_soft_skills.schedule img{
+        top: 20px;
+        right: 0;
+    }
+
+    .details_list_soft_skills.idea img, .details_list_soft_skills.chameleon img{
+        top: 20px;
+        left: 0;
+    }
+    .details_list_soft_skills img{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .details_list_soft_skills:hover img{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .details_list_soft_skills.conversation:hover img, .details_list_soft_skills.schedule:hover img{
+        top: 10px;
+        right: -5px;
+    }
+    
+    .details_list_soft_skills.chameleon:hover img, .details_list_soft_skills.idea:hover img{
+        top: 10px;
+        left: -5px;
+    }
+}
+
 @media screen and (max-width: 767px) {
  #floating-logo{
     width: 50px;
@@ -196,5 +235,4 @@
     top: 0px;
     left: 30px;
 }
-
 }

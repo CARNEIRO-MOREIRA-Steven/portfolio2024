@@ -117,6 +117,39 @@
         left: -10vw;
     }
 }
+@media screen and (min-width: 768px) and (max-width : 1023px) {
+    .profil_container{
+        flex-direction: column;
+    }
+    .profil_description{
+        width: 85vw;
+        height: 60vh;
+        padding: 10vh 0 0 0;
+        gap: 25px;
+    }
+    .profil_hobbies_details{
+        width: 75vw;
+        height: 15vh;
+        padding: 15px;
+    }
+    .profil_hobbies_details il{
+        overflow: hidden;
+    }
+    .profil_image{
+        height: 25vh;
+    }
+    #profil_image{
+        height: 25vh;
+    }
+    #manette_hobbies{
+        left: 70vw;
+        bottom: 7vh;
+    }
+    #pc_hobbies{
+        bottom: -14vh;
+        left: -20vw;
+    }
+}
 
 @media screen and (max-width: 767px) {
     .profil_container{
