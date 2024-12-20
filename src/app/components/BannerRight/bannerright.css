@@ -1,7 +1,7 @@
 .banner_right_container{
     height: 100%;
     position: fixed;
-    left: 94vw;
+    left: 96vw;
     top: 0;
     z-index: 10;
     color: #ffffff;
@@ -13,7 +13,7 @@
 }
 
 .banner-right-texte{
-    font-size: 22px;
+    font-size: 21px;
     writing-mode: vertical-rl;
     text-orientation: upright;
     padding: 0;
