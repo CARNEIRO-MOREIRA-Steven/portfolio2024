@@ -4,11 +4,14 @@ import './bannerright.css'
 const BannerRight = () => {
   return (
     <section className='banner_right_container'>
-      <img className='banner_right_svg code' src='code-solid.svg'></img>
-        <p className='banner-right-texte'>Développeur frontend</p>
+        <p className='banner-right-texte'>
+        <span>Développeur frontend</span>
+        </p>
         <aside className='banner_right_link'>
-        <img className='banner_right_svg' src='linkedin-brands-solid.svg'></img>
-        <img className='banner_right_svg' src='github-brands-solid.svg'></img>
+        <a href='https://www.linkedin.com/in/steven-carneiro-moreira-742626264/' target='blank'>
+        <img className='banner_right_svg' src='linkedin-brands-solid.svg'></img></a>
+        <a href='https://github.com/CARNEIRO-MOREIRA-Steven' target='blank'>
+        <img className='banner_right_svg' src='github-brands-solid.svg'></img></a>
         </aside>
     </section>
   )

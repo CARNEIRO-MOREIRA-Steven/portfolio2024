@@ -1,10 +1,10 @@
 "use client";
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import './banner.css';
 
 const Banner = () => {
+
   const [isVisible, setIsVisible] = useState(false);
 
   const titleControls = useAnimation();
@@ -47,6 +47,18 @@ const Banner = () => {
     };
   }, []);
 
+  const handleScrollToSection = (e, id) => {
+    e.preventDefault(); // Empêche le comportement par défaut
+    const targetSection = document.getElementById(id);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section ref={sectionRef} className="banner_container">
       <img className="image_background" src="./photodev.jpg" alt="background" />
@@ -85,6 +97,7 @@ const Banner = () => {
             <a
               className="button_profil"
               href="#profil"
+              onClick={(e) => handleScrollToSection(e, "profil")}
             >
               Me découvrir
             </a>

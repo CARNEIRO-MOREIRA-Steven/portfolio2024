@@ -8,7 +8,7 @@ header{
     width: 100vw;
     position: fixed;
     z-index: 5;
-    background-color: rgba(0, 0, 0, 0.658);
+    background-color: #000000;
 }
 .title_banner{
     display: flex;
@@ -17,6 +17,13 @@ header{
 nav{
     display: flex;
     gap: 50px;
+}
+
+.header_right_svg{
+  position: absolute;
+  left: 94vw;
+  width: 40px;
+  filter: invert();
 }
 
 .nav {
@@ -38,9 +45,11 @@ nav{
       gap: 10px;
       flex-wrap: wrap;
       justify-content: space-evenly;
-
     }
     header{
       height: 15vh;
+    }
+    .header_right_svg{
+      display: none;
     }
   }

@@ -1,18 +1,15 @@
 .banner_right_container{
     height: 100%;
-    width: 5vw;
     position: fixed;
-    right: 0;
+    left: 94vw;
     top: 0;
-    background-color: #ffffff;
     z-index: 10;
-    color: #000000;
+    color: #ffffff;
     flex-direction: column;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .banner-right-texte{
@@ -21,10 +18,31 @@
     text-orientation: upright;
     padding: 0;
     font-weight: 800;
+    margin-top: 10vh;
 }
+
+.banner-right-texte {
+    overflow: hidden;
+  }
+  
+  .banner-right-texte span {
+    display: inline-block;
+    animation: scrollText 10s linear infinite;
+  }
+  
+  
+  @keyframes scrollText {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%); 
+    }
+  }
 
 .banner_right_svg{
     width: 40px;
+    filter: invert();
 }
 
 .banner_right_link{
@@ -34,20 +52,30 @@
     justify-content: center;
     align-items: center;
     gap: 25px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
     .banner_right_container{
-        height: 7vh;
+        height: 8vh;
         width: 100%;
-        top: 93%;
-        background-color: #ffffff;
-
+        top: 92vh;
+        left: 0;
     }
+    @keyframes scrollText {
+        0% {
+          transform: translateX(-110%);
+        }
+        100% {
+          transform: translateX(120%); 
+        }
+      }
     .banner-right-texte{
         writing-mode: horizontal-tb;
         text-orientation: sideways;
         font-size: 20px;
+        margin-top: 0;
+        animation: scrollText 10s linear infinite;
     }
     .banner_right_svg{
         width: 30px;

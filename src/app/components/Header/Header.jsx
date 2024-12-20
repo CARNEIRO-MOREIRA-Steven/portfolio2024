@@ -1,30 +1,19 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import "./header.css";
-import gsap from "gsap";
-import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 const Header = () => {
   const handleScrollToSection = (e, id) => {
-    e.preventDefault(); // Bloque le comportement par défaut
+    e.preventDefault();
 
     const targetSection = document.getElementById(id);
 
     if (targetSection) {
-      // Désactive les épinglages avant de scroller
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-      // Animation fluide pour le scroll
-      gsap.to(window, {
-        duration: 1.2,
-        scrollTo: { y: targetSection, offsetY: 0 },
-        ease: "power2.inOut",
-        onComplete: () => {
-          // Réinitialise les ScrollTriggers après l'animation
-          ScrollTrigger.refresh();
-        },
+      const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
       });
     }
   };
@@ -32,28 +21,57 @@ const Header = () => {
   return (
     <header>
       <aside className="nav">
-        <h2 className="title_banner">SCM</h2>
-        <nav>
-          <a
+        <h2 className="title_banner"><motion.a
             href="#banner"
             onClick={(e) => handleScrollToSection(e, "banner")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >SCM
+          </motion.a></h2>
+        <nav>
+          <motion.a
+            href="#banner"
+            onClick={(e) => handleScrollToSection(e, "banner")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             Accueil
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#profil"
             onClick={(e) => handleScrollToSection(e, "profil")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             Qui suis-je ?
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#skills"
             onClick={(e) => handleScrollToSection(e, "skills")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             Skills
-          </a>
+          </motion.a>
+          <motion.a
+            href="#realisations"
+            onClick={(e) => handleScrollToSection(e, "realisations")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Projets
+          </motion.a>
+          <motion.a
+            href="#contact"
+            onClick={(e) => handleScrollToSection(e, "contact")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Contact
+          </motion.a>
         </nav>
       </aside>
+      <img className='header_right_svg code' src='code-solid.svg'></img>
     </header>
   );
 };

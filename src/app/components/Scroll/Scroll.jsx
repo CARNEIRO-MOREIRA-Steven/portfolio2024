@@ -15,6 +15,7 @@ const Scroll = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
+        id='banner'
       >
         <Banner />
       </motion.section>
@@ -24,6 +25,7 @@ const Scroll = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
+        id='profil'
       >
         <Profil />
       </motion.section>
@@ -33,6 +35,7 @@ const Scroll = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
+        id='skills'
       >
         <Skills />
       </motion.section>
@@ -42,6 +45,7 @@ const Scroll = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
+        id='realisations'
       >
         <Realisation />
       </motion.section>
@@ -51,6 +55,7 @@ const Scroll = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
+        id='contact'
       >
         <Contact />
       </motion.section>

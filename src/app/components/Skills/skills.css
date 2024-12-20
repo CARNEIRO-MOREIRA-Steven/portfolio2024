@@ -1,5 +1,5 @@
 .skills_container {
-    width: 95vw;
+    width: 100vw;
     height: 100vh;
     padding: 10vh 0 0 0;
     display: flex;
@@ -44,7 +44,7 @@
     display: flex;
     height: 30vh;
     align-items: center;
-    width: 100vw;
+    width: 95vw;
     justify-content: space-evenly;
 }
 
@@ -98,6 +98,43 @@
     left: 30px;
 }
 
+@media screen and (min-width: 1024px) and (max-width : 1499px) {
+    .details_list_soft_skills{
+        width: 150px;
+        height: 70%;
+    }
+    .details_list_soft_skills img{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+    }
+    
+    .details_list_soft_skills.conversation img , .details_list_soft_skills.schedule img{
+        top: 35px;
+        right: 40px;
+    }
+    
+    .details_list_soft_skills.idea img, .details_list_soft_skills.chameleon img{
+        top: 35px;
+        left: 40px;
+    }
+    
+    .details_list_soft_skills:hover img{
+        width: 80px;
+        height: 80px;
+    }
+    
+    .details_list_soft_skills.conversation:hover img, .details_list_soft_skills.schedule:hover img{
+        top: 25px;
+        right: 30px;
+    }
+    
+    .details_list_soft_skills.chameleon:hover img, .details_list_soft_skills.idea:hover img{
+        top: 25px;
+        left: 30px;
+    }
+}
+
 @media screen and (max-width: 767px) {
  #floating-logo{
     width: 50px;
@@ -115,7 +152,7 @@
     height: 35vh;
  }
  .skills_container{
-    height: 78vh;
+    height: 80vh;
     width: 100vw;
     padding-top: 15vh;
     justify-content: space-evenly;

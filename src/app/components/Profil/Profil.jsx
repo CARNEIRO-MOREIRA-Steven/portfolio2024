@@ -74,7 +74,7 @@ const Profil = () => {
 
   return (
     <section ref={sectionRef} className="profil_container">
-      <img className="section2_background" src="3213337.jpg" alt="Background" />
+      <img className="profil_background" src="3213337.jpg" alt="Background" />
       <section className="profil_description">
         <motion.h2
           initial={{ opacity: 0, }}
