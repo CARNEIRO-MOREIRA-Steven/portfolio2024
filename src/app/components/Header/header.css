@@ -46,6 +46,9 @@ nav{
       flex-wrap: wrap;
       justify-content: space-evenly;
     }
+    nav a {
+      padding: 2px 15px;
+    }
     header{
       height: 15vh;
     }

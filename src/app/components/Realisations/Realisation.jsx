@@ -91,7 +91,7 @@ const TiltCard = ({ title, image, description, link }) => {
       <div className={`tilt-card-content back`}>
         <div className="back-content">
           <h2>{title}</h2>
-          <p>{description}</p>
+          <p className="limited-texte">{description}</p>
           <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">Voir le projet</a>
         </div>
       </div>
