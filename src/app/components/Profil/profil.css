@@ -4,13 +4,20 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 25px;
+    overflow: hidden;
 }
 
 #profil_image{
     width: 25vw;
     height: 60vh;
+    padding: 30px 0 0 0;
+    border-radius: 50% 50% 0 0;
+    object-fit: cover;
+    z-index: 2;
 }
+
 
 .profil_photo{
     width: 25vw;
@@ -20,14 +27,44 @@
 }
 
 .profil_description{
-    width: 70vw;
+    width: 90vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: start;
-    justify-content: center;
-    gap: 45px;
-    padding-left: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name_description {
+    width: 25vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.hobbies_description{
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.image_profil{
+    width: 30vw;
+    background-color: #1790c8af;
+    border-radius: 50% 50% 0 0;
+}
+#background_image{
+    display: flex;
+    position: absolute;
+    width: 40vw;
+    object-fit: cover;
+    z-index: 0;
+    height: 70vh;
+    filter: brightness(80%);
 }
 
 .profil_description .profil_image{
@@ -47,8 +84,8 @@
 }
 
 .profil_hobbies_details{
-    width: 35vw;
-    height: 20vh;
+    width: 25vw;
+    height: 22vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,15 +104,16 @@
 #manette_hobbies{
     position: relative;
     width: 100px;
-    left: 33vw;
+    left: 22vw;
     bottom: 10vh;
     height: 100px;
+    overflow: hidden;
 }
 #pc_hobbies{
     position: relative;
     width: 100px;
-    left: -9vw;
-    bottom: -19vh;
+    left: -8vw;
+    bottom: -22vh;
     height: 100px;
 }
 
@@ -104,14 +142,8 @@
     height: 20vh;
 }
 @media screen and (min-width: 1024px) and (max-width : 1540px) {
-    .profil_description{
-        gap: 35px;
-    }
-    .profil_hobbies_details{
-        width: 50vw;
-    }
     #manette_hobbies{
-        left: 46.5vw;
+        left: 22vw;
     }
     #pc_hobbies{
         left: -10vw;
@@ -128,7 +160,6 @@
         gap: 25px;
     }
     .profil_hobbies_details{
-        width: 75vw;
         height: 15vh;
         padding: 15px;
     }

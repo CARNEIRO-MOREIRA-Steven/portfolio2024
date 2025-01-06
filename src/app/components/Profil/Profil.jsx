@@ -74,14 +74,15 @@ const Profil = () => {
 
   return (
     <section ref={sectionRef} className="profil_container">
-      <img className="profil_background" src="3213337.jpg" alt="Background" />
+      {/* <img className="profil_background" src="3213337.jpg" alt="Background" /> */}
       <section className="profil_description">
+        <section className="name_description">
         <motion.h2
           initial={{ opacity: 0, }}
           animate={titleControls}
           className="profil_title"
         >
-          Qui suis-je ?
+          Steven
         </motion.h2>
 
         <motion.h3
@@ -89,8 +90,15 @@ const Profil = () => {
           animate={subtitleControls}
           className="profil_subtitle"
         >
-          Steven - Développeur web frontend
+           Développeur web frontend
         </motion.h3>
+        <motion.p
+          initial={{ opacity: 0, y: -50 }}
+          animate={descriptionControls}
+          className="profil_description_text"
+        >
+          25 ans
+        </motion.p>
         <motion.p
           initial={{ opacity: 0, y: -50 }}
           animate={descriptionControls}
@@ -99,8 +107,19 @@ const Profil = () => {
           J'ai 25 ans et j'ai décidé de changer radicalement de métier pour m'orienter vers un univers qui m'intéresse réellement et dans lequel
           je m'épanouis pleinement.
         </motion.p>
-
+        </section>
+        <section className="image_profil">
         <motion.section
+        initial={{ opacity: 0, scale :0.5 }}
+        animate={imageControls}
+        className="profil_image"
+      >
+        <img id="profil_image" src="photoprofil.png" alt="Photo de dev" />
+        <img src="klipartz.png" id="background_image"></img>
+      </motion.section>
+      </section>
+      <section className="hobbies_description">
+      <motion.section
           initial={{ opacity: 0, x: -550 }}
           animate={jobDetailsControls}
           className="details_profil_jobs"
@@ -110,7 +129,6 @@ const Profil = () => {
             intérêt pour la construction, celle-ci est désormais bien différente : au lieu de bâtir des toitures, je construis des sites web.
           </p>
         </motion.section>
-
         <motion.section
           initial={{ opacity: 0, scale :0 }}
           animate={hobbiesControls}
@@ -129,15 +147,8 @@ const Profil = () => {
           <motion.img animate={pcHobbies} initial={{x : 50, y: 50, opacity : 0 }} src="./pc.png" id="pc_hobbies"></motion.img>
           </section>
         </motion.section>
+        </section>
       </section>
-
-      <motion.section
-        initial={{ opacity: 0, scale :0.5 }}
-        animate={imageControls}
-        className="profil_image"
-      >
-        <img id="profil_image" src="photoprofil.png" alt="Photo de dev" />
-      </motion.section>
     </section>
   );
 };
