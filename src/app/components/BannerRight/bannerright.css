@@ -82,6 +82,7 @@
         font-size: 20px;
         margin-top: 0;
         animation: scrollText 10s linear infinite;
+        overflow: visible;
     }
     .banner_right_svg{
         width: 30px;

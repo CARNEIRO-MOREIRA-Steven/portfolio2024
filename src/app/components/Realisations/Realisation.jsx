@@ -5,7 +5,7 @@ import "./realisation.css";
 const Realisation = () => {
   const projects = [
     { title: "L'espace d'un Instant", image: "lespaceduninstant.png", description: "Réalisation d'un site internet pour une maison d'hote avec système de réservation", link: "https://lespaced1instant.com/" },
-    { title: "Neuf Mois Demain", image: "neufmoisdemain.png", description: "Réalisation d'un site internet pourde la location de matériel de puériculture avec gestion des locations et cautions", link: "https://neufmoisdemain.com/accueil/" },
+    { title: "Neuf Mois Demain", image: "neufmoisdemain.png", description: "Réalisation d'un site internet pour de la location de matériel de puériculture avec gestion des locations et cautions", link: "https://neufmoisdemain.com/accueil/" },
     { title: "Greenz Ink Tattoo", image: "greenzink.png", description: "Réalisation d'un site internet pour une tatoueuse", link: "https://greenz-tattoo.vercel.app/" },
     { title: "Les Talents Emergents", image: "lestalentsemergents.png", description: "Intégration d'un site pour de la formation, contenu modifié par le client par la suite", link: "https://les-talents-emergents.com/" },
   ];

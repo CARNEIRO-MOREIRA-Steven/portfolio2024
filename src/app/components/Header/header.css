@@ -8,15 +8,22 @@ header{
     width: 100vw;
     position: fixed;
     z-index: 5;
-    background-color: #000000;
 }
 .title_banner{
     display: flex;
     align-items: center;
+    height: 8vh;
+}
+.icon_banner{
+  height: 4vh;
 }
 nav{
     display: flex;
-    gap: 50px;
+    gap: 30px;
+    background-color: rgba(0, 0, 0, 0.568);
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: solid 2px #ffffff;
 }
 
 .header_right_svg{
@@ -43,11 +50,18 @@ nav{
     }
     nav{
       gap: 10px;
+      padding: 10px 20px;
       flex-wrap: wrap;
       justify-content: space-evenly;
     }
     header{
       height: 15vh;
+    }
+    .title_banner{
+      height: 6vh;
+    }
+    .icon_banner{
+      height: 3vh;
     }
   }
 
