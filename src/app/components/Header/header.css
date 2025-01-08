@@ -45,23 +45,23 @@ nav{
   
   @media screen and (max-width: 767px) {
     .nav{
-      flex-direction: column;
       gap: 10px;
+      justify-content: center;
+      width : 100vw
     }
     nav{
-      gap: 10px;
-      padding: 10px 20px;
+      gap: 5px;
+      padding: 10px 10px;
       flex-wrap: wrap;
-      justify-content: space-evenly;
     }
     header{
-      height: 15vh;
+      height: 10vh;
     }
     .title_banner{
       height: 6vh;
     }
     .icon_banner{
-      height: 3vh;
+      height: 2vh;
     }
   }
 

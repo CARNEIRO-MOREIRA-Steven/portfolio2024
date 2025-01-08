@@ -74,7 +74,6 @@ const Profil = () => {
 
   return (
     <section ref={sectionRef} className="profil_container">
-      {/* <img className="profil_background" src="3213337.jpg" alt="Background" /> */}
       <section className="profil_description">
         <section className="name_description">
         <motion.h2
@@ -98,14 +97,6 @@ const Profil = () => {
           className="profil_description_text"
         >
           25 ans
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: -50 }}
-          animate={descriptionControls}
-          className="profil_description_text"
-        >
-          J'ai 25 ans et j'ai décidé de changer radicalement de métier pour m'orienter vers un univers qui m'intéresse réellement et dans lequel
-          je m'épanouis pleinement.
         </motion.p>
         </section>
         <section className="image_profil">

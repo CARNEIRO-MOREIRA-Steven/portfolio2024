@@ -1,165 +1,63 @@
 import './skills.css';
+import './skills.css';
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
-  const sectionRef= useRef(null)
-
-  const hardSkillsTitlte = useAnimation();
-  const containerSkills = useAnimation ();
-  const softSkillsTitle = useAnimation ();
-  const listSoftSkills1 = useAnimation ();
-  const listSoftSkills2 = useAnimation ();
-  const listSoftSkills3 = useAnimation ();
-  const listSoftSkills4 = useAnimation ();
-
+  const skills = [
+    { name: "HTML", percentage: 100 },
+    { name: "CSS", percentage: 100 },
+    { name: "JavaScript", percentage: 85 },
+    { name: "Next.js", percentage: 80 },
+    { name: "Framer Motion", percentage: 80 },
+    { name: "React", percentage: 70 },
+  ];
 
   const checkVisibility = () => {
     const section = sectionRef.current;
     if (section) {
       const rect = section.getBoundingClientRect();
-      const isInView = rect.top >= 0 && rect.top <= window.innerHeight * 0.8; 
-      if (isInView) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      const isInView = rect.top >= 0 && rect.top <= window.innerHeight * 0.8;
+      setIsVisible(isInView);
     }
   };
 
   useEffect(() => {
-      if (isVisible) {
-        hardSkillsTitlte.start({ opacity: 1,  transition: { duration: 1, delay : 0.5 } });
-        containerSkills.start({opacity : 1, transition: { duration: 0.5, delay : 1 }});
-        softSkillsTitle.start({y : 0, transition : {duration : 1 , delay : 1.5}});
-        listSoftSkills1.start({ opacity: 1, transition : {duration : 0.7 , delay : 2.2}});
-        listSoftSkills2.start({ opacity: 1, transition : {duration : 0.7 , delay : 2.7}});
-        listSoftSkills3.start({ opacity: 1, transition : {duration : 0.7, delay : 3.2}});
-        listSoftSkills4.start({ opacity: 1, transition : {duration : 0.7 , delay : 3.7}});
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
 
-        
-      } else {
-        hardSkillsTitlte.start({ opacity: 0,});
-        containerSkills.start({opacity : 0, delay : 1.5})
-        softSkillsTitle.start({ y : -100})
-        listSoftSkills1.start({opacity :0})
-        listSoftSkills2.start({opacity :0})
-        listSoftSkills3.start({opacity :0})
-        listSoftSkills4.start({opacity :0})
-
-      }
-    }, [isVisible,]);
-  
-    useEffect(() => {
-      window.addEventListener('scroll', checkVisibility);
-      checkVisibility();
-  
-      return () => {
-        window.removeEventListener('scroll', checkVisibility);
-      };
-    }, []);
-  
-  const containerRef = useRef(null);
-  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
-  const [logoPositions, setLogoPositions] = useState([]);
-
-
-  const logos = [
-    { src: "react.png", alt: "React Logo" },
-    { src: "next.webp", alt: "Next.js Logo" },
-    { src: "html.webp", alt: "HTML Logo" },
-    { src: "css.png", alt: "CSS Logo" },
-    { src: "JavaScript-logo.png", alt: "JavaScript Logo" },
-    { src: "gsap.jpeg", alt: "Gsap Logo" },
-    { src: "framer.png", alt: "Framer Logo" },
-  ];
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const { offsetWidth, offsetHeight } = containerRef.current;
-      setContainerSize({ width: offsetWidth, height: offsetHeight });
-    }
-    const handleResize = () => {
-      if (containerRef.current) {
-        const { offsetWidth, offsetHeight } = containerRef.current;
-        setContainerSize({ width: offsetWidth, height: offsetHeight });
-      }
+    return () => {
+      window.removeEventListener("scroll", checkVisibility);
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const initialPositions = logos.map(() => getRandomPosition());
-    setLogoPositions(initialPositions);
-  }, [containerSize.width, containerSize.height]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLogoPositions((prevPositions) =>
-        prevPositions.map(() => getRandomPosition())
-      );
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [containerSize]);
-
-  const getRandomPosition = () => ({
-    x: Math.random() * (containerSize.width * 0.6),
-    y: Math.random() * (containerSize.height * 0.8),
-  });
-
   return (
-    <motion.section
-      className="skills_container" ref={sectionRef}>
-      <section className="hard_skills">
-        <motion.h2 animate={hardSkillsTitlte} initial={{opacity : 0}}>Hard skills</motion.h2>
-        <motion.div animate={containerSkills} initial={{opacity : 0}} className="floating-logos-container" ref={containerRef}>
-          {logos.map((logo, index) => (
-            <motion.img
-              key={index}
-              src={logo.src}
-              alt={logo.alt}
-              id="floating-logo"
-              animate={{
-                x: logoPositions[index]?.x || 0,
-                y: logoPositions[index]?.y || 0,
-              }}
-              transition={{
-                duration: 6, 
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </motion.div>
+    <section ref={sectionRef}
+    className='skills_container'
+    initial={{ opacity: 0 }}
+    animate={isVisible ? { opacity: 1, transition: { duration: 0.5 } } : {}}>
+    <section className="skills_content">
+      <h2>Mes Compétences</h2>
+      <section className="skills_list">
+        {skills.map((skill, index) => (
+          <section key={index} className="skill_item">
+            <section className="skill_name">{skill.name}</section>
+            <section className="skill_bar_container">
+              <motion.section
+                className="skill_bar"
+                initial={{ width: 0 }}
+                animate={isVisible ? { width: `${skill.percentage}%`, transition: { duration: 1.5, delay: index * 0.3 } } : {}}
+              />
+            </section>
+            <div className="skill_percentage">{skill.percentage}%</div>
+          </section>
+        ))}
       </section>
-      <section className="soft_skills">
-        <motion.h2 animate={softSkillsTitle} initial={{y : -100}}>Soft skills</motion.h2>
-        <ul className='list_soft_skills'>
-          <motion.li className='details_list_soft_skills conversation' initial={{ opacity: 0 }} animate={listSoftSkills1}>
-            Communication
-            <aside>
-            <img src='./conversation.png'></img></aside>
-          </motion.li>
-          <motion.li className='details_list_soft_skills idea' initial={{ opacity: 0 }} animate={ listSoftSkills2 }>
-            Créativité
-            <aside>
-            <img src='./idea.png'></img></aside>
-          </motion.li>
-          <motion.li className='details_list_soft_skills schedule' initial={{ opacity: 0 }} animate={ listSoftSkills3 }>
-            Gestion du temps
-            <aside>
-            <img src='./schedule.png'></img></aside>
-            </motion.li>
-          <motion.li className='details_list_soft_skills chameleon' initial={{ opacity: 0 }} animate={listSoftSkills4 }>
-            L'adaptabilité
-            <aside>
-            <img src='./chameleon.png'></img></aside>
-            </motion.li>
-        </ul>
-      </section>
-    </motion.section>
+    </section>
+    </section>
   );
 };
 
