@@ -53,6 +53,7 @@ button {
 
 html {
   scroll-snap-type: y mandatory;
+  
 }
 
 
@@ -64,6 +65,8 @@ html {
   justify-content: center;
   align-items: flex-start;
   position: relative;
+  overflow-x: hidden;
+
 }
 
 .content_section > div {

@@ -1,5 +1,5 @@
 .banner_right_container{
-    height: 100vh;
+    height: 100%;
     position: fixed;
     left: 94vw;
     top: 0;
@@ -67,7 +67,6 @@
         width: 100vw;
         top: 92vh;
         left: 0;
-        overflow: hidden;
     }
     @keyframes scrollText {
         0% {
