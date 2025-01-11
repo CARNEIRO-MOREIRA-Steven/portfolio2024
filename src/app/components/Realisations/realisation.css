@@ -75,14 +75,14 @@
   .project-link {
     color: #fff;
     text-decoration: none;
-    background-color: #007bff;
+    background-color: #106389;
     padding: 10px 20px;
     border-radius: 5px;
     width: 70%;
   }
   
   .project-link:hover {
-    background-color: #0056b3;
+    background-color: #106389;
   }
   
   .tilt-card.flipped .tilt-card-content.front {
@@ -103,15 +103,16 @@
 }
     .tilt-card{
         height: 35vh;
-        width: 35vw;
+        width: 30vw;
     }
+
   }
   
   @media screen and (max-width: 767px) {
     #realisation-container{
         width: 100vw;
-        padding: 0vh 0 0vh 0;
-        height: 100vh;
+        height: 80vh;
+        padding: 10vh 0;
         align-content: center;
         gap: 15px;
     }

@@ -38,18 +38,10 @@
 
 .name_description {
     width: 25vw;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-
-.hobbies_description{
-    width: 30vw;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 .image_profil{
@@ -71,121 +63,50 @@
     display: flex;
     justify-content: center;
 }
-
-.construction_svg_top , .construction_svg_bottom{
-    width: 30%;
-}
-
-.profil_hobbies{
-    width: 95vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.profil_hobbies_details{
-    width: 25vw;
-    height: 22vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    padding: 40px 25px;
-    background-color: rgba(0, 0, 0, 0.301);
-    overflow: hidden;
-}
-.profil_hobbies_details li{
-    font-size: 20px;
-}
-.image_hobbies{
-    position: absolute;
-}
-/* #manette_hobbies{
-    position: relative;
-    width: 100px;
-    left: 22vw;
-    bottom: 10vh;
-    height: 100px;
-    overflow: hidden;
-}
-#pc_hobbies{
-    position: relative;
-    width: 100px;
-    left: -8vw;
-    bottom: -22vh;
-    height: 100px;
-} */
-
 .details_profil_jobs{
     display: flex;
     flex-direction: column;
     gap: 50px
 }
-.profil_background{
-    position: absolute;
-    width: 95vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(15%);
-  }
 
-.construction_svg_top{
-    position: relative;
-    left: -64.5%;
-    height: 20vh;
-}
-.construction_svg_bottom{
-    position: relative;
-    left: 64.5%;
-    height: 20vh;
-}
-@media screen and (min-width: 1024px) and (max-width : 1540px) {
-    #manette_hobbies{
-        left: 22vw;
-    }
-    #pc_hobbies{
-        left: -10vw;
-    }
-}
 @media screen and (min-width: 768px) and (max-width : 1023px) {
     .profil_container{
         flex-direction: column;
+        height: 90vh;
+        padding: 10vh 0 0 0;
     }
     .profil_description{
         width: 85vw;
-        height: 60vh;
-        padding: 10vh 0 0 0;
-        gap: 25px;
+        height: 90vh;
+        gap: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
     }
-    .profil_hobbies_details{
-        height: 15vh;
-        padding: 15px;
-    }
-    .profil_hobbies_details il{
-        overflow: hidden;
+    .name_description{
+        width: 50vw;
+        height: 40vh;
     }
     .profil_image{
-        height: 25vh;
+        height: 40vh;
     }
     #profil_image{
-        height: 25vh;
+        height: 35vh;
     }
-    #manette_hobbies{
-        left: 70vw;
-        bottom: 7vh;
+    #background_image{
+        height: 40vh;
+        width: 35vw;
     }
-    #pc_hobbies{
-        bottom: -14vh;
-        left: -20vw;
+    .profil_description .profil_image{
+        align-items: flex-end;
     }
 }
 
 @media screen and (max-width: 767px) {
     .profil_container{
         width: 100%;
-        height: 100vh;
+        height: 80vh;
+        padding: 10vh 0;
         gap: 0;
         flex-direction: column;
         justify-content : flex-start ;
@@ -193,7 +114,7 @@
     .profil_description{
         width: 100%;
         height: 100vh;
-        gap: 25px;
+        gap: 0px;
         align-items: center;
         text-align: center;
         flex-direction : column;
@@ -201,7 +122,8 @@
     .name_description{
         width : 100vw;
         height: 15vh;
-        justify-content: flex-end;
+        justify-content: space-around;
+        margin-bottom: 5px;
     }
     .image_profil{
         width : 200px;
@@ -226,9 +148,6 @@
         width : 250px;
         height : 25vh;
     }
-    .hobbies_description{
-        width : 100vw; 
-    }
     .next_experience{
         display: none;
     }
@@ -238,20 +157,5 @@
         height: 90vh;
         align-items: center;
         text-align: center;
-    }
-    .profil_hobbies_details{
-        display: none;
-    }
-    .construction_svg2{
-        right: -35%;
-        bottom : 0
-    }
-    .construction_svg_top{
-        position: relative;
-        left: -50%;
-    }
-    .construction_svg_bottom{
-        position: relative;
-        left: 50%;
     }
 }

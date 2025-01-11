@@ -9,9 +9,9 @@ const BannerRight = () => {
         </p>
         <aside className='banner_right_link'>
         <a href='https://www.linkedin.com/in/steven-carneiro-moreira-742626264/' target='blank'>
-        <img className='banner_right_svg' src='linkedin-brands-solid.svg'></img></a>
+        <img className='banner_right_svg' src='linkedin-brands-solid.svg' alt='logo likedin'></img></a>
         <a href='https://github.com/CARNEIRO-MOREIRA-Steven' target='blank'>
-        <img className='banner_right_svg' src='github-brands-solid.svg'></img></a>
+        <img className='banner_right_svg' src='github-brands-solid.svg' alt='logo github'></img></a>
         </aside>
     </section>
   )

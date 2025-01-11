@@ -48,7 +48,7 @@ const Banner = () => {
   }, []);
 
   const handleScrollToSection = (e, id) => {
-    e.preventDefault(); // Empêche le comportement par défaut
+    e.preventDefault();
     const targetSection = document.getElementById(id);
 
     if (targetSection) {
@@ -61,23 +61,14 @@ const Banner = () => {
 
   return (
     <section ref={sectionRef} className="banner_container">
-      <img className="image_background" src="./photodev.jpg" alt="background" />
+      <img className="image_background" src="./photodev.jpg" alt="background"/>
       <section className="banner_content">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={titleControls}
           className="banner_title"
         >
-          {"CARNEIRO MOREIRA Steven".split("").map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.15 }}
-            >
-              {letter}
-            </motion.span>
-          ))}
+          {"CARNEIRO MOREIRA Steven"}
         </motion.h1>
 
         <motion.h2

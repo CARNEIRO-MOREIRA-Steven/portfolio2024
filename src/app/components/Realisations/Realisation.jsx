@@ -74,7 +74,7 @@ const TiltCard = ({ title, image, description, link }) => {
   }, []);
 
   return (
-    <motion.div
+    <motion.section
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -85,17 +85,17 @@ const TiltCard = ({ title, image, description, link }) => {
       }}
       className={`tilt-card ${isFlipped ? "flipped" : ""}`}
     >
-      <div className={`tilt-card-content front`} style={{ backgroundImage: `url(${image})` }}>
-      </div>
+      <section className={`tilt-card-content front`} style={{ backgroundImage: `url(${image})` }}>
+      </section>
 
-      <div className={`tilt-card-content back`}>
-        <div className="back-content">
+      <section className={`tilt-card-content back`}>
+        <section className="back-content">
           <h2>{title}</h2>
           <p>{description}</p>
           <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">Voir le projet</a>
-        </div>
-      </div>
-    </motion.div>
+        </section>
+      </section>
+    </motion.section>
   );
 };
 

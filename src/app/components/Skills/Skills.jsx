@@ -1,7 +1,7 @@
 import './skills.css';
 import './skills.css';
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -52,11 +52,16 @@ const Skills = () => {
                 animate={isVisible ? { width: `${skill.percentage}%`, transition: { duration: 1.5, delay: index * 0.3 } } : {}}
               />
             </section>
-            <div className="skill_percentage">{skill.percentage}%</div>
           </section>
         ))}
       </section>
     </section>
+    <section className='soft_skills'>
+        <p className='soft_skills_name'>Communication </p>
+        <p className='soft_skills_name'>Collaboration</p>
+        <p className='soft_skills_name'>Gestion du temps</p>
+        <p className='soft_skills_name'>Adaptabilité</p>
+      </section>
     </section>
   );
 };

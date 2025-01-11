@@ -28,7 +28,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
           >
         <img className="title_banner"
-        src="logo_scm.png">
+        src="logo_scm.png" alt=" logo header">
           </img></motion.a>
         <nav>
         <motion.a
@@ -38,7 +38,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
           >
         <img className="icon_banner"
-        src="house-solid.svg">
+        src="house-solid.svg" alt="icon maison">
           </img></motion.a>
           <motion.a
             href="#profil"
@@ -47,7 +47,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
           >
         <img className="icon_banner"
-        src="user-solid.svg">
+        src="user-solid.svg" alt="icon profil">
           </img></motion.a>
           <motion.a
             href="#avis"
@@ -56,7 +56,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
           >
         <img className="icon_banner"
-        src="star-solid.svg">
+        src="star-solid.svg" alt="icon note">
           </img></motion.a>
           <motion.a
             href="#realisations"
@@ -65,7 +65,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
           >
         <img className="icon_banner"
-        src="laptop-code-solid.svg">
+        src="laptop-code-solid.svg" alt="icon code">
           </img></motion.a>
           <motion.a
             href="#contact"
@@ -74,7 +74,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
           >
         <img className="icon_banner"
-        src="address-card-solid.svg">
+        src="address-card-solid.svg" alt="icon contact">
           </img></motion.a>
         </nav>
       </aside>

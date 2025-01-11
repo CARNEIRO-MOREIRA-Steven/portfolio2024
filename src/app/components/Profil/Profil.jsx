@@ -110,7 +110,7 @@ const Profil = () => {
         className="profil_image"
       >
         <img id="profil_image" src="photoprofil.png" alt="Photo de dev" />
-        <img src="klipartz.png" id="background_image"></img>
+        <img src="klipartz.png" id="background_image" alt="decoration image"></img>
       </motion.section>
       </section>
       <Skills />

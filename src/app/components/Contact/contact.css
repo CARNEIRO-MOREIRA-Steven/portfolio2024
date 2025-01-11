@@ -166,7 +166,17 @@ textarea{
 
 @media screen and (min-width: 768px) and (max-width: 1023px){
   .form_container{
-      width: 70%;
+    width: 80%;
+  }
+  .form_content{
+    width: 80%;
+  }
+  .form{
+    height: 100%;
+  }
+  .info_contact_content{
+    width: 80vw;
+    align-items: center;
   }
 }
 
@@ -176,7 +186,8 @@ textarea{
         padding: 0;
         justify-content: center;
         gap: 20px;   
-        height: 100vh;
+        height: 80vh;
+        padding: 10vh 0;
        }
     #contact{
       height: 100vh;
