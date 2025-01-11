@@ -39,28 +39,21 @@ const Profil = () => {
   useEffect(() => {
     if (isVisible) {
       titleControls.start({ opacity: 1, transition: { duration: 1.5 } });
-      subtitleControls.start({ opacity: 1, y: 0, transition: { duration: 1, delay : 1 } });
+      subtitleControls.start({ opacity: 1, x: 0, transition: { duration: 1, delay : 1 } });
       descriptionControls.start({ opacity: 1, y: 0, transition: { duration: 1, delay : 1.5 } });
       jobDetailsControls.start({ x: 0, transition: { duration: 1, delay : 2 } });
       jobDetailsControls.start({ opacity: 1, transition: { duration: 1, delay : 2.05 } });
       hobbiesControls.start({ opacity: 1, scale :1, transition: { duration: 1, delay : 2.5 } });
       imageControls.start({ opacity: 1, scale :1, transition: { duration: 0.5, delay : 0.5 } });
-      hobbiesTitle.start({ y : 0, transition: { duration: .5, delay : 2.9 } });
-      listeHobbies1.start({ x : 0, opacity : 1, transition: { duration: 1, delay : 3.5 }});
-      listeHobbies2.start({ x : 0, opacity : 1, transition: { duration: 1, delay : 4 }});
-      listeHobbies3.start({ x : 0, opacity : 1, transition: { duration: 1, delay : 4.5 }});
-      manetteHobbies.start ({x : 0, y :0, rotate :35 , opacity : 1, transition : { duration :.5, delay: 5}})
-      pcHobbies.start ({x : 0, y :0, opacity : 1, transition : { duration :.5, delay: 5}})
 
 
     } else {
       titleControls.start({ opacity: 0 });
-      subtitleControls.start({ opacity: 0, y: 50 });
-      descriptionControls.start({ opacity: 0, y: -50 });
+      subtitleControls.start({ opacity: 0, x: -500 });
+      descriptionControls.start({ opacity: 0, y: 100 });
       jobDetailsControls.start({ opacity: 0, x: -550 });
       hobbiesControls.start({ opacity: 0, scale :1 });
       imageControls.start({ opacity: 0, scale :0.5 });
-      hobbiesTitle.start({ y : -100})
     }
   }, [isVisible, titleControls, subtitleControls, descriptionControls, jobDetailsControls, hobbiesControls, imageControls, hobbiesTitle]);
 
@@ -86,14 +79,14 @@ const Profil = () => {
         </motion.h2>
 
         <motion.h3
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, x: -500 }}
           animate={subtitleControls}
           className="profil_subtitle"
         >
            Développeur web frontend
         </motion.h3>
         <motion.p
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: 100 }}
           animate={descriptionControls}
           className="profil_description_text"
         >
@@ -121,27 +114,6 @@ const Profil = () => {
       </motion.section>
       </section>
       <Skills />
-      {/* <section className="hobbies_description">
-      
-        <motion.section
-          initial={{ opacity: 0, scale :0 }}
-          animate={hobbiesControls}
-          className="profil_hobbies_details"
-        >
-          <motion.h3
-          initial={{y : -100}}
-          animate={hobbiesTitle}>Quelques hobbies</motion.h3>
-          <ul>
-            <motion.li animate={listeHobbies1} initial={{x : -700, opacity : 0}}>Je suis passionné par les jeux vidéo, notamment les RPG et les jeux d'aventure.</motion.li>
-            <motion.li animate={listeHobbies2} initial={{x : -700, opacity : 0}}>J'aime apprendre de nouvelles technologies pour rester à la pointe du développement web.</motion.li>
-            <motion.li animate={listeHobbies3} initial={{x : -700, opacity : 0}}>Je suis un adepte des séries et d'animés.</motion.li>
-          </ul>
-          <section className="image_hobbies">
-          <motion.img animate={manetteHobbies} initial={{x : -50, y:-50, rotate :0, opacity : 0 }} id="manette_hobbies" src="./manette.png"></motion.img>
-          <motion.img animate={pcHobbies} initial={{x : 50, y: 50, opacity : 0 }} src="./pc.png" id="pc_hobbies"></motion.img>
-          </section>
-        </motion.section>
-        </section> */}
       </section>
     </section>
   );

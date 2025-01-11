@@ -50,13 +50,13 @@ const Header = () => {
         src="user-solid.svg">
           </img></motion.a>
           <motion.a
-            href="#skills"
-            onClick={(e) => handleScrollToSection(e, "skills")}
+            href="#avis"
+            onClick={(e) => handleScrollToSection(e, "avis")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
         <img className="icon_banner"
-        src="gears-solid.svg">
+        src="star-solid.svg">
           </img></motion.a>
           <motion.a
             href="#realisations"

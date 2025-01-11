@@ -290,7 +290,7 @@ await buttonControls.start({
       </section>
       <section className='info_contact_content'>
         <h2>Information de contact</h2>
-        <h3>Email : codemetasolutions@gmail.com</h3>
+        <h3>codemetasolutions@gmail.com</h3>
         <h3>Téléphone : 06.27.57.59.07</h3>
         <h3>Adresse : 02300 Chauny </h3>
       </section>
