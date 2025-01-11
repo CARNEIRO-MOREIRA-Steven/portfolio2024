@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import './profil.css';
+import Skills from "../Skills/Skills";
 
 const Profil = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -98,6 +99,16 @@ const Profil = () => {
         >
           25 ans
         </motion.p>
+        <motion.section
+          initial={{ opacity: 0, x: -550 }}
+          animate={jobDetailsControls}
+          className="details_profil_jobs"
+        >
+          <p className="next_experience">
+            Ancien salarié dans le BTP, j'ai choisi de me tourner vers un domaine pour lequel j'ai une véritable passion. Toujours animé par un
+            intérêt pour la construction, celle-ci est désormais bien différente : au lieu de bâtir des toitures, je construis des sites web.
+          </p>
+        </motion.section>
         </section>
         <section className="image_profil">
         <motion.section
@@ -109,17 +120,9 @@ const Profil = () => {
         <img src="klipartz.png" id="background_image"></img>
       </motion.section>
       </section>
-      <section className="hobbies_description">
-      <motion.section
-          initial={{ opacity: 0, x: -550 }}
-          animate={jobDetailsControls}
-          className="details_profil_jobs"
-        >
-          <p>
-            Ancien salarié dans le BTP, j'ai choisi de me tourner vers un domaine pour lequel j'ai une véritable passion. Toujours animé par un
-            intérêt pour la construction, celle-ci est désormais bien différente : au lieu de bâtir des toitures, je construis des sites web.
-          </p>
-        </motion.section>
+      <Skills />
+      {/* <section className="hobbies_description">
+      
         <motion.section
           initial={{ opacity: 0, scale :0 }}
           animate={hobbiesControls}
@@ -138,7 +141,7 @@ const Profil = () => {
           <motion.img animate={pcHobbies} initial={{x : 50, y: 50, opacity : 0 }} src="./pc.png" id="pc_hobbies"></motion.img>
           </section>
         </motion.section>
-        </section>
+        </section> */}
       </section>
     </section>
   );

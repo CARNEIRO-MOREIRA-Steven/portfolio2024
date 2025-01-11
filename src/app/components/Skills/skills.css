@@ -4,7 +4,7 @@
 
 .skills_container{
     height: 100vh;
-    width: 100vw;
+    width: 25vw;
     display: flex;
     justify-content: flex-start;
     padding: 0 25px;
@@ -49,4 +49,31 @@
     font-size: 14px;
     text-align: right;
   }
-  
+  @media screen and (max-width: 767px) {
+    .skills_list{
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .skill_item{
+      width: 45%;
+    }
+    .skills_container{
+      width: 100vw;
+      height: 35vh;
+      justify-content: center;
+      padding: 0;
+    }
+    .skills_list{
+      margin-top: 10px;
+    }
+    .skills_content h2{
+      font-size: 20px;
+    }
+    .skills_content{
+      width: 85vw;
+      padding: 10px;
+    }
+  }

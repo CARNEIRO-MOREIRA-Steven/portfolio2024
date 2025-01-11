@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import './scroll.css'
 import Banner from '../Banner/Banner';
 import Profil from '../Profil/Profil';
-import Skills from '../Skills/Skills';
+import Avis from '../Avis/Avis';
 import Realisation from '../Realisations/Realisation';
 import Contact from '../Contact/Contact';
 const Scroll = () => {
@@ -35,9 +35,9 @@ const Scroll = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        id='skills'
+        id='avis'
       >
-        <Skills />
+        <Avis />
       </motion.section>
 
       <motion.section
