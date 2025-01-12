@@ -1,0 +1,165 @@
+.profil_container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    overflow: hidden;
+}
+
+#profil_image{
+    width: 25vw;
+    height: 55vh;
+    padding: 30px 0 0 0;
+    border-radius: 50% 50% 0 0;
+    object-fit: cover;
+    z-index: 2;
+}
+
+
+.profil_photo{
+    width: 25vw;
+    height: 60vh;
+    object-fit: cover;
+    filter: brightness(55%);
+}
+
+.profil_description{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+}
+
+.name_description {
+    width: 25vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.image_profil{
+    width: 30vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 60vh;
+    background-color: #1790c8af;
+    border-radius: 50% 50% 0 0;
+}
+#background_image{
+    display: flex;
+    position: absolute;
+    width: 30vw;
+    object-fit: cover;
+    z-index: 0;
+    height: 70vh;
+    filter: brightness(80%);
+}
+
+.profil_description .profil_image{
+    display: flex;
+    justify-content: center;
+}
+.details_profil_jobs{
+    display: flex;
+    flex-direction: column;
+    gap: 50px
+}
+
+@media screen and (min-width: 768px) and (max-width : 1023px) {
+    .profil_container{
+        flex-direction: column;
+        height: 90vh;
+        padding: 10vh 0 0 0;
+    }
+    .profil_description{
+        width: 85vw;
+        height: 90vh;
+        gap: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+    }
+    .name_description{
+        width: 50vw;
+        height: 40vh;
+    }
+    .profil_image{
+        height: 40vh;
+    }
+    #profil_image{
+        height: 35vh;
+    }
+    #background_image{
+        height: 40vh;
+        width: 35vw;
+    }
+    .profil_description .profil_image{
+        align-items: flex-end;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .profil_container{
+        width: 100%;
+        height: 80vh;
+        padding: 10vh 0;
+        gap: 0;
+        flex-direction: column;
+        justify-content : flex-start ;
+    }
+    .profil_description{
+        width: 100%;
+        height: 80vh;
+        gap: 0px;
+        align-items: center;
+        text-align: center;
+        flex-direction : column;
+    }
+    .name_description{
+        width : 100vw;
+        height: 15vh;
+        justify-content: space-around;
+        margin-bottom: 5px;
+    }
+    .image_profil{
+        width : 150px;
+        height : 20vh;
+    }
+    .profil_image{
+        height: 20vh;
+        width: 100%;
+    }
+    .profil_description .profil_image{
+        align-items: flex-end;
+    }
+    #profil_image{
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        height: 17vh;
+        padding : 0;
+        align-items: flex-end;
+    }
+    #background_image{
+        width : 200px;
+        height : 20vh;
+    }
+    .next_experience{
+        display: none;
+    }
+    .profil_jobs_details{
+        padding: 10px;
+        width: 100%;
+        height: 90vh;
+        align-items: center;
+        text-align: center;
+    }
+}

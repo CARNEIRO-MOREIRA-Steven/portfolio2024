@@ -1,0 +1,102 @@
+.segment {
+  fill: var(--accent);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+.scroll_section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.scroll_h1{
+  padding: 0;
+  position: absolute;
+  top: 30%;
+  margin: 0;
+  width: 100vw;
+  text-align: center;
+}
+
+
+#refresh {
+  padding: 5px;
+}
+
+#refresh svg {
+  transition: transform 0.4s ease-out;
+}
+
+#refresh:hover svg {
+  transform: rotate(360deg);
+  will-change: transform;
+}
+
+#logo {
+  fill: var(--accent);
+  width: 41px;
+  height: 14px;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  
+}
+
+
+.content_section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow-x: hidden;
+
+}
+
+.content_section > div {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scroll_h2 {
+  margin: 0;
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 25px);
+  width: 95vw;
+  text-align: center;
+  left: 0;
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--accent);
+  bottom: 50px;
+  transform: scaleX(0);
+}
+
+@media screen and (max-width: 767px) {
+  .content_section{
+    height: 100vh;
+  }
+}

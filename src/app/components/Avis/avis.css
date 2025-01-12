@@ -1,0 +1,51 @@
+.avis_container{
+    width:90vw;
+    height: 90vh;
+    padding: 10vh 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.ciCnpO  a,div.ciCnpO  a *{
+    max-height: 0px !important;
+    width: 0px !important;
+    filter: brightness(0);
+}
+
+@media screen and (max-width: 767px) {
+.avis_container{
+    width: 100vw;
+    height: 80vh;
+    padding: 10vh 0;
+}
+
+.elfsight-app-264c4d90-c4e4-4e4d-b756-0d7ab9ab914b{
+    width: 90%;
+}
+
+.jZUVBI{
+    padding: 0 10px !important;
+    height: 80vh;
+}
+
+.ebwQNX{
+    height: 220px;
+}
+.lhTHAU{
+    margin-bottom: 10px !important;
+}
+.jOACPc{
+    margin-bottom: 20px !important;
+} 
+
+.QqUEG{
+    margin-bottom: -40px;
+}
+
+.ciCnpO{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+}
