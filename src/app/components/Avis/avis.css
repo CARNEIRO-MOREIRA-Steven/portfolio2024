@@ -1,8 +1,66 @@
-.avis_container{
-    width:90vw;
-    height: 80vh;
-    padding: 10vh 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container_avis{
+    padding: 15vh 0 0 0;
 }
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #106389;
+  }
+  
+  .reviewCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    background-color: #f9f9f9;
+    width: 30%;
+  }
+  
+  .stars {
+    color: #f5c518;
+    font-size: 24px;
+  }
+  
+  .reviewText {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000;
+  }
+  
+  .author {
+    font-size: 14px;
+    color: #000000;
+  }
+
+  @media screen and (min-width : 768px) and (max-width : 1023px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .reviewCard{
+        width: 80%;
+    }
+  }
+  @media screen and (min-width : 320px) and (max-width : 767px) {
+    .container{
+      padding: 20px 0 ;
+      flex-direction: column;
+      align-content: center;
+    }
+    .reviewCard{
+      width: 100%;
+    }
+  }
